@@ -5,7 +5,7 @@ class BinarySearchTree {
     this.right = null;
   }
 
-  addNode(data) {git remote add origin https://github.com/febv1/DSA1.git
+  addNode(data) {
     if (data === this.data) {
       return;
     }
