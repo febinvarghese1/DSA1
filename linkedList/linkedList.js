@@ -1,4 +1,3 @@
-
 class Node {
   constructor(data, next) {
     this.data = data;
@@ -23,11 +22,17 @@ class LinkedList {
     currentNode.next = new Node(data, null);
   }
 
-
   addNodeAtStart(data) {
     let node = new Node(data, this.head);
     this.head = node;
   }
+
+  addNodebyValues(array) {
+    for (let i = 0; i < array.length; i++) {
+      this.addNodeAtEnd(array[i]);
+    }
+  }
+
   printList() {
     if (this.head === null) {
       console.log("List is empty");
@@ -42,13 +47,8 @@ class LinkedList {
   }
 }
 
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const ll = new LinkedList();
-ll.addNodeAtEnd(1);
-ll.addNodeAtEnd(2);
-ll.addNodeAtEnd(3);
-ll.addNodeAtEnd(4);
-ll.addNodeAtEnd(5);
-ll.addNodeAtEnd(6);
-ll.addNodeAtEnd(7);
 ll.addNodeAtStart(0);
-ll.printList()
+ll.addNodebyValues(array);
+ll.printList();
